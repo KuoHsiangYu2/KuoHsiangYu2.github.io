@@ -1,0 +1,107 @@
+.grid {
+    height: 400px;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid black; */
+    background-color: rgb(241, 241, 162);
+}
+
+.grid div {
+    box-sizing: border-box;
+    height: 20px;
+    width: 20px;
+    /* background-color: red; */
+}
+
+.grid div:not(.taken) {
+    border: 1px solid #e8e8e8;
+    background-color: #a2b6e5;
+}
+
+.tetromino {
+    background-color: blue;
+}
+
+.mini-grid {
+    margin-left: 50px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: yellow;
+}
+
+.mini-grid div {
+    height: 20px;
+    width: 20px;
+    /* background-color: red; */
+}
+
+/* body    min-height: 100vh; */
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #5d4037;
+    /* background-image:
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 40px,
+            rgba(0, 0, 0, 0.1) 40px,
+            rgba(0, 0, 0, 0.1) 80px),
+        linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px); */
+    background: radial-gradient(circle,
+            rgb(206, 243, 204) 0%,
+            rgb(152, 233, 172) 89%,
+            rgb(97, 243, 160) 100%);
+    background-size: 80px 100%, 100% 20px;
+    color: #fbe9e7;
+    /* min-height: 100vh; */
+}
+
+.title-container h3 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+#start-button {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #62f4ed 0%, #9a64d1 90%);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+#start-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+#start-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
