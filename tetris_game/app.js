@@ -23,7 +23,7 @@ function initGrid() {
 }
 initGrid();
 
-// 洗牌函數，打亂陣列順序，避免同一個骨牌永遠都是相同的顏色.
+// 洗牌函數，打亂陣列順序，避免同一個 骨牌【tetromino】 永遠都是相同的顏色.
 function shuffle(array) {
     // 從最後一個元素往前.
     for (let i = array.length - 1; i > 0; i--) {
@@ -37,7 +37,6 @@ function shuffle(array) {
 
 let squares = Array.from(document.querySelectorAll(".grid div"));
 let score = 0;
-// const GRID_WIDTH = 10;
 const width = 10;
 const scoreDisplay = document.querySelector("#score");
 const startBtn = document.querySelector("#start-button");
@@ -123,8 +122,8 @@ const iTetromino = [
 ];
 
 const theTetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
-let currentPosition = 4;
-let currentRotation = 0;
+let currentPosition = 4; // 起始位置 位置.
+let currentRotation = 0; // 旋轉角度.
 
 // randomly select a Tetromino and its first rotation.
 let random = Math.floor(Math.random() * theTetrominoes.length);
@@ -148,9 +147,11 @@ const upNextTetrominoes = [
 // 開始/暫停 按鈕.
 startBtn.addEventListener("click", () => {
     if (timerId) {
+        // 如果 timerId 已經存在，表示遊戲正在進行中，則暫停遊戲.
         clearInterval(timerId);
         timerId = null;
     } else {
+        // 【開始遊戲】如果 timerId 不存在，表示遊戲已經暫停，則開始遊戲.
         draw();
         timerId = setInterval(moveDown, 1000);
         nextRandom = Math.floor(Math.random() * theTetrominoes.length);
@@ -344,6 +345,7 @@ function freeze() {
         nextRandom = Math.floor(Math.random() * theTetrominoes.length);
         current = theTetrominoes[random][currentRotation];
         currentPosition = 4;
+        currentRotation = 0;
 
         // 打亂陣列順序，避免同一個骨牌永遠都是相同的顏色.
         shuffle(colors);
