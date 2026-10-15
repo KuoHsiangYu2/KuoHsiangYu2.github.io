@@ -266,6 +266,7 @@ function rotate() {
 
     // iTetromino 距離 右邊邊界 還有一格空間時 為 true .
     const isITetrominoRightEdgeEmpty = current.some((index) => ((currentPosition + index) % width === (width - 2)));
+
     if (isAtRightEdge || isAtLeftEdge) {
         console.log(" " + (new Date()).getTime() + " _碰到 左邊界、右邊界 旋轉被阻擋：");
     } else if (random === 4 && isITetrominoRightEdgeEmpty && (currentRotation === 1 || currentRotation === 3)) {

@@ -18,11 +18,25 @@
     </div>
     <br />
 
-    <div class="container">
-        <div id="grid" class="grid">
-        </div>
+    <div class="game-layout">
+        <aside class="instructions" aria-labelledby="instructions-title">
+            <h2 id="instructions-title">俄羅斯方塊遊戲</h2>
+            <p>點擊 Start/Pause 開始遊戲<br />
+                按 ←→ 骨牌左右移動<br />
+                按 ↑ 骨牌 90°轉動變換<br />
+                按 ↓ 加速骨牌掉落
+            </p>
+            <p>當多個骨牌水平方向連成一直線即消滅，並得分。<br />
+                骨牌堆疊到頂部 遊戲結束
+            </p>
+        </aside>
 
-        <div id="mini-grid" class="mini-grid">
+        <div class="container">
+            <div id="grid" class="grid">
+            </div>
+
+            <div id="mini-grid" class="mini-grid">
+            </div>
         </div>
     </div>
 
